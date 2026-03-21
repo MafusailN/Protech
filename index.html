@@ -15,37 +15,40 @@
 
         /* Контейнер для всей страницы (меню + контент) */
         .promek-page-container {
-            display: flex;
-            min-height: 100vh;
+            display: flex; /* Flexbox для выравнивания меню и основного контента */
+            min-height: 100vh; /* Минимальная высота на всю высоту окна */
         }
 
         /* Стили для бокового меню */
         .promek-sidebar {
-            width: 60px;
-            height: 100vh;
-            position: fixed;
+            width: 60px; /* Ширина в свернутом состоянии */
+            height: 100vh; /* Высота на всю высоту окна */
+            position: fixed; /* Фиксируем меню слева */
             top: 0;
             left: 0;
-            background-color: #f0f4ff;
-            transition: width 0.3s ease;
-            overflow: hidden;
-            z-index: 1000;
-            border-right: 1px solid #cfd6e5;
+            background-color: #f0f4ff; /* Этот цвет остался, так как он фоновый */
+            transition: width 0.3s ease; /* Плавный переход при наведении */
+            overflow: hidden; /* Скрываем всё, что выходит за границы */
+            z-index: 1000; /* Поверх основного контента */
+            border-right: 1px solid #cfd6e5; /* Легкая граница справа */
+            display: flex; /* Flexbox для выравнивания элементов меню */
+            flex-direction: column; /* Элементы в столбец */
         }
 
         .promek-menu-item {
-            color: #0657ba;
+            color: #0657ba; /* Основной цвет текста ссылок */
             text-decoration: none;
             display: block;
-            padding: 15px 10px;
-            white-space: nowrap;
-            overflow: hidden;
-            transition: padding 0.3s ease;
-            border-bottom: 1px solid #dfe4f0;
+            padding: 15px 10px; /* Отступы для удобства наведения */
+            white-space: nowrap; /* Не переносим текст */
+            overflow: hidden; /* Скрываем текст, пока меню свернуто */
+            transition: padding 0.3s ease; /* Плавный отступ при раскрытии */
+            border-bottom: 1px solid #dfe4f0; /* Легкий разделитель */
+            width: 100%; /* Занимает всю ширину родителя */
         }
 
         .promek-menu-item:hover {
-            background-color: #e0e7ff;
+            background-color: #e0e7ff; /* Этот цвет остался для подсветки */
         }
 
         .promek-menu-icon {
@@ -56,35 +59,39 @@
             text-align: center;
             font-weight: bold;
             font-size: 16px;
-            margin-right: 10px;
+            margin-right: 10px; /* Отступ между иконкой и текстом */
             vertical-align: middle;
         }
 
+        /* Текст элемента меню */
         .promek-menu-text {
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
+            opacity: 0; /* Скрываем текст по умолчанию */
+            visibility: hidden; /* Делаем невидимым */
+            transition: opacity 0.3s ease, visibility 0.3s ease; /* Плавное появление */
         }
 
+        /* При наведении на sidebar */
         .promek-sidebar:hover {
-            width: 250px;
+            width: 250px; /* Расширяем меню */
         }
 
         .promek-sidebar:hover .promek-menu-text {
-            opacity: 1;
-            visibility: visible;
+            opacity: 1; /* Показываем текст */
+            visibility: visible; /* Делаем видимым */
         }
 
         .promek-sidebar:hover .promek-menu-item {
-            padding: 15px 20px;
+            padding: 15px 20px; /* Увеличиваем отступы при раскрытии */
         }
 
         /* Основной контент */
         .promek-main-content {
-            flex: 1;
-            margin-left: 60px;
-            padding: 20px;
-            background-color: #ffffff;
+            flex: 1; /* Занимает оставшееся место */
+            margin-left: 60px; /* Отступ слева, чтобы не перекрывалось меню */
+            padding: 20px; /* Внутренние отступы */
+            background-color: #ffffff; /* Белый фон */
+            min-height: 100vh; /* Высота не меньше окна */
+            box-sizing: border-box; /* Включаем padding в расчёт ширины */
         }
 
         /* Шапка с логотипом и значком */
@@ -93,60 +100,61 @@
             align-items: center;
             margin-bottom: 30px;
             padding-bottom: 20px;
-            border-bottom: 2px solid #0657ba;
+            border-bottom: 2px solid #0657ba; /* Цвет границы шапки */
         }
         .promek-logo {
-            width: 300px;
-            height: auto;
-            margin-right: 20px;
-            cursor: pointer;
+            width: 300px; /* Ширина логотипа */
+            height: auto; /* Сохраняем пропорции */
+            margin-right: 20px; /* Отступ справа */
+            cursor: pointer; /* Курсор-указатель при наведении */
         }
         .promek-icon {
-            width: 60px;
-            height: 60px;
-            cursor: pointer;
+            width: 60px; /* Ширина значка */
+            height: 60px; /* Высота значка */
+            cursor: pointer; /* Курсор-указатель при наведении */
         }
         .promek-icon img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: contain; /* Изображение масштабируется, чтобы полностью поместиться */
         }
 
         /* Стили для основного контента */
         .promek-about-section {
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
+            /* max-width: 800px; Можно вернуть, если нужно ограничить ширину текста */
+            margin: 0 auto; /* Центрируем */
+            padding: 20px; /* Внутренние отступы */
+            line-height: 1.6; /* Межстрочный интервал */
         }
         .promek-about-section h1,
         .promek-about-section h2,
         .promek-about-section h3 {
-            color: #0657ba;
+            color: #0657ba; /* Цвет заголовков */
         }
         .promek-about-section h1 {
-            border-bottom: 3px solid #0657ba;
-            padding-bottom: 10px;
+            border-bottom: 3px solid #0657ba; /* Цвет нижней границы заголовка */
+            padding-bottom: 10px; /* Отступ под заголовком */
         }
 
         .promek-about-intro {
-            background-color: #f9f9ff;
-            padding: 15px;
-            border-left: 4px solid #0000ff;
-            margin: 20px 0;
+            background-color: #f9f9ff; /* Этот фон остался */
+            padding: 15px; /* Внутренние отступы */
+            border-left: 4px solid #0657ba; /* Цвет левой границы блока */
+            margin: 20px 0; /* Внешние отступы */
         }
         .promek-about-goals ul {
-            list-style-type: circle;
-            padding-left: 20px;
+            list-style-type: circle; /* Стиль списка */
+            padding-left: 20px; /* Отступ слева для списка */
         }
         .promek-about-goals li {
-            margin-bottom: 8px;
+            margin-bottom: 8px; /* Отступ снизу для элемента списка */
         }
     </style>
 </head>
 <body>
 
 <div class="promek-page-container">
-    <!-- Боковое мен -->
+    <!-- Боковое меню -->
     <div class="promek-sidebar">
         <a href="#top" class="promek-menu-item">
             <span class="promek-menu-icon">ℹ️</span>
@@ -156,11 +164,11 @@
             <span class="promek-menu-icon">🏢</span>
             <span class="promek-menu-text">О компании</span>
         </a>
-        <a href="https://mafusailn.github.io/Protech/fokusnye-brendy.html" class="promek-menu-item">
+        <a href="https://mafusailn.github.io/Protech/fokusnye-brendy.html  " class="promek-menu-item">
             <span class="promek-menu-icon">🎯</span>
-            <span class="promek-menu-text">Фокусные бренды</span>
+            <span class="">Фокусные бренды</span>
         </a>
-        <a href="https://mafusailn.github.io/Protech/kategorii-portfelya" class="promek-menu-item">
+        <a href="https://mafusailn.github.io/Protech/kategorii-portfelya  " class="promek-menu-item">
             <span class="promek-menu-icon">📦</span>
             <span class="promek-menu-text">Категории портфеля</span>
         </a>
@@ -239,8 +247,8 @@
             <p>Здесь вы можете найти информацию по следующим разделам:</p>
             <ul>
                 <li><a href="o-kompanii.html">О компании</a> — история, миссия, ценности Протэк.</li>
-                <li><a href="https://mafusailn.github.io/Protech/fokusnye-brendy.html">Фокусные бренды</a> — цветовая маркировка и стратегия работы.</li>
-                <li><a href="https://mafusailn.github.io/Protech/kategorii-portfelya">Категории портфеля</a> — список основных направлений и фокусные бренды в них.</li>
+                <li><a href="https://mafusailn.github.io/Protech/fokusnye-brendy.html  ">Фокусные бренды</a> — цветовая маркировка и стратегия работы.</li>
+                <li><a href="https://mafusailn.github.io/Protech/kategorii-portfelya  ">Категории портфеля</a> — список основных направлений и фокусные бренды в них.</li>
                 <li><a href="matrica-raci.html">Матрица RACI</a> — распределение ролей и ответственности между МАП, МСП и РОП.</li>
                 <li><strong>RFM-анализ</strong> — сегментация клиентов и стратегии работы.</li>
                 <li><strong>Воронка продаж МСП</strong> — этапы, действия, SLA.</li>
