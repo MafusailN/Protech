@@ -3,107 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фокусные бренды - Книга продаж Протэк</title>
-    <!-- Стили можно вставить в HTML-блок на странице -->
+    <title>О портале - Книга продаж Протэк</title>
     <style>
-        .promek-fokus-section {
-            font-family: 'Arial', sans-serif; /* Замените на Actay, если подключен */
-            max-width: 800px;
-            margin: 0 auto;
+        /* Сброс отступов для body */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden; /* Предотвращаем горизонтальный скролл */
+        }
+
+        /* Контейнер для всей страницы (меню + контент) */
+        .promek-page-container {
+            display: flex;
+            min-height: 100vh; /* Высота на всю высоту окна */
+        }
+
+        /* Стили для бокового меню */
+        .promek-sidebar {
+            width: 60px; /* Ширина в свернутом состоянии */
+            height: 100vh;
+            position: fixed; /* Фиксируем меню слева */
+            top: 0;
+            left: 0;
+            background-color: #f0f4ff; /* Цвет фона меню */
+            transition: width 0.3s ease; /* Плавный переход при наведении */
+            overflow: hidden; /* Скрываем всё, что выходит за границы */
+            z-index: 1000; /* Поверх основного контента */
+            border-right: 1px solid #cfd6e5;
+        }
+
+        /* Стили для элемента меню (ссылки) */
+        .promek-menu-item {
+            color: #0000ff; /* Цвет текста */
+            text-decoration: none;
+            display: block;
+            padding: 15px 10px; /* Отступы для удобства наведения */
+            white-space: nowrap; /* Не переносим текст */
+            overflow: hidden; /* Скрываем текст, пока меню свернуто */
+            transition: padding 0.3s ease; /* Плавный отступ при раскрытии */
+            border-bottom: 1px solid #dfe4f0; /* Легкий разделитель */
+        }
+
+        .promek-menu-item:hover {
+            background-color: #e0e7ff; /* Подсветка при наведении на элемент */
+        }
+
+        /* Стили для иконки (можно использовать Unicode или CSS-прямоугольники) */
+        .promek-menu-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            margin-right: 10px; /* Отступ между иконкой и текстом */
+            vertical-align: middle;
+        }
+
+        /* Текст элемента меню */
+        .promek-menu-text {
+            opacity: 0; /* Скрываем текст по умолчанию */
+            visibility: hidden; /* Делаем невидимым */
+            transition: opacity 0.3s ease, visibility 0.3s ease; /* Плавное появление */
+        }
+
+        /* При наведении на sidebar */
+        .promek-sidebar:hover {
+            width: 250px; /* Расширяем меню */
+        }
+
+        .promek-sidebar:hover .promek-menu-text {
+            opacity: 1; /* Показываем текст */
+            visibility: visible; /* Делаем видимым */
+        }
+
+        .promek-sidebar:hover .promek-menu-item {
+            padding: 15px 20px; /* Увеличиваем отступы при раскрытии */
+        }
+
+        /* Основной контент */
+        .promek-main-content {
+            flex: 1; /* Занимает оставшееся место */
+            margin-left: 60px; /* Отступ слева, чтобы не перекрывалось меню */
             padding: 20px;
+            background-color: #ffffff;
+        }
+
+        /* Стили для основного контента из предыдущей версии */
+        .promek-about-section {
+            /* max-width: 800px; Убираем ограничение ширины, так как теперь есть меню */
+            margin: 0 auto;
+            padding: 20px; /* Уже задано в .promek-main-content, можно убрать дубль */
             line-height: 1.6;
         }
-        .promek-fokus-section h1,
-        .promek-fokus-section h2,
-        .promek-fokus-section h3 {
+        .promek-about-section h1,
+        .promek-about-section h2,
+        .promek-about-section h3 {
             color: #0000ff; /* Основной синий */
         }
-        .promek-fokus-section h1 {
+        .promek-about-section h1 {
             border-bottom: 3px solid #0000ff;
             padding-bottom: 10px;
         }
-        .promek-fokus-definition {
+        /* Удаляем стили для .promek-nav, так как блоки убраны */
+
+        /* Стили для поискового блока */
+        .promek-search-container {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f9f9ff; /* Легкий фон для выделения блока */
+            border-radius: 5px;
+            border: 1px solid #cfd6e5;
+        }
+        .promek-search-box {
+            width: calc(100% - 22px); /* Ширина с учетом padding'ов и border'ов */
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #0000ff; /* Синий бордер */
+            border-radius: 4px;
+            box-sizing: border-box; /* Учитываем padding и border в ширину */
+        }
+        .promek-search-box:focus {
+            outline: none; /* Убираем стандартный outline */
+            box-shadow: 0 0 5px rgba(0, 0, 255, 0.5); /* Добавляем синюю тень при фокусе */
+        }
+        .promek-search-button {
+            padding: 10px 15px;
+            margin-left: 10px;
+            background-color: #0000ff; /* Синий фон кнопки */
+            color: white; /* Белый текст кнопки */
+            border: none; /* Убираем стандартный бордер */
+            border-radius: 4px;
+            cursor: pointer; /* Меняем курсор на "руку" */
+            font-size: 16px;
+        }
+        .promek-search-button:hover {
+            background-color: #0000cc; /* Темнее при наведении */
+        }
+
+
+        .promek-about-intro {
             background-color: #f9f9ff; /* Вторичный светлый фон */
             padding: 15px;
             border-left: 4px solid #0000ff;
             margin: 20px 0;
         }
-        .promek-fokus-colors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
+        .promek-about-goals ul {
+            list-style-type: circle; /* Менее агрессивный маркер */
+            padding-left: 20px;
         }
-        .promek-fokus-color-card {
-            border: 1px solid #cfd6e5;
-            border-radius: 8px;
-            padding: 15px;
+        .promek-about-goals li {
+            margin-bottom: 8px;
         }
-        .promek-fokus-orange { background-color: #fff4e5; border-left: 4px solid #ffa500; } /* Условный оранжевый */
-        .promek-fokus-blue { background-color: #e6f0ff; border-left: 4px solid #007bff; } /* Условный голубой */
-        .promek-fokus-white { background-color: #f5f5f5; border-left: 4px solid #ccc; } /* Условный "без цвета" */
-
-
-        .promek-fokus-color-title {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .promek-fokus-algo-title { margin-top: 25px; }
     </style>
 </head>
 <body>
 
-<div class="promek-fokus-section">
-
-    <h1>Фокусные бренды</h1>
-
-    <div class="promek-fokus-definition">
-        <p><strong>Фокусные бренды</strong> — это ключевой элемент стратегии продаж Протэк. Это те производители и решения, на которые мы делаем акцент при подборе оборудования для клиента.</p>
-        <p><strong>Цель:</strong> Увеличить средний чек, улучшить маржинальность, поддержать долгосрочные отношения с производителями, которые помогают нам в реализации проектов.</p>
-        <p><strong>Принцип:</strong> При прочих равных условиях (цена, срок поставки, функционал) — мы рекомендуем фокусные бренды.</p>
-    </div>
-
-    <h2>Цветовая маркировка</h2>
-    <p>Каждый бренд в портфеле Протэк имеет цветовую метку. Цвет показывает стратегию работы с этим брендом.</p>
-
-    <div class="promek-fokus-colors-grid">
-        <div class="promek-fokus-color-card promek-fokus-orange">
-            <div class="promek-fokus-color-title">🟠 Оранжевый — Фокус / Развитие</div>
-            <p><strong>Стратегия:</strong> Активное продвижение, обучение, маркетинг-поддержка, приоритет на складе.</p>
-            <p><strong>Примеры:</strong> ZKTeco, Dahua, <span class="promek-highlight">Carddex</span>, <span class="promek-highlight">Esmart</span>.</p>
+    <div class="promek-page-container">
+        <!-- Боковое меню -->
+        <div class="promek-sidebar">
+            <!-- Элемент меню: О портале (текущая страница) -->
+            <a href="o-portalie" class="promek-menu-item">
+                <span class="promek-menu-icon">ℹ️</span> <!-- Иконка -->
+                <span class="promek-menu-text">О портале</span>
+            </a>
+            <!-- Элемент меню: О компании -->
+            <a href="o-kompanii" class="promek-menu-item">
+                <span class="promek-menu-icon">🏢</span> <!-- Иконка -->
+                <span class="promek-menu-text">О компании</span>
+            </a>
+            <!-- Элемент меню: Фокусные бренды (внешняя ссылка, переход в той же вкладке) -->
+            <a href="https://mafusailn.github.io/Protech/fokusnye-brendy.html" class="promek-menu-item">
+                <span class="promek-menu-icon">🎯</span>
+                <span class="promek-menu-text">Фокусные бренды</span>
+            </a>
+            <!-- Элемент меню: Категории портфеля (внешняя ссылка, переход в той же вкладке) -->
+            <a href="https://mafusailn.github.io/Protech/kategorii-portfelya" class="promek-menu-item">
+                <span class="promek-menu-icon">📦</span>
+                <span class="promek-menu-text">Категории портфеля</span>
+            </a>
+            <!-- Элемент меню: Матрица RACI -->
+            <a href="matrica-raci" class="promek-menu-item">
+                <span class="promek-menu-icon">📋</span> <!-- Иконка -->
+                <span class="promek-menu-text">Матрица RACI</span>
+            </a>
+            <!-- Элемент меню: RFM-анализ (заглушка) -->
+            <a href="#" class="promek-menu-item">
+                <span class="promek-menu-icon">📊</span>
+                <span class="promek-menu-text">RFM-анализ</span>
+            </a>
+            <!-- Элемент меню: Воронка МСП (заглушка) -->
+            <a href="#" class="promek-menu-item">
+                <span class="promek-menu-icon>
+                <span class="promek-menu-text">Воронка МСП</span>
+            </a>
+            <!-- Элемент меню: Алгоритмы (заглушка) -->
+            <a href="#" class="promek-menu-item">
+                <span class="promek-menu-icon">⚙️</span>
+                <span class="promek-menu-text">Алгоритмы работы</span>
+            </a>
+            <!-- Элемент меню: Финансы и риски (заглушка) -->
+            <a href="#" class="promek-menu-item">
+                <span class="promek-menu-icon">💰</span>
+                <span class="promek-menu-text">Финансы и риски</span>
+            </a>
+             <!-- Элемент меню: Дашборд (заглушка) -->
+            <a href="#" class="promek-menu-item">
+                <span class="promek-menu-icon">📈</span>
+                <span class="promek-menu-text">Дашборд</span>
+            </a>
         </div>
 
-        <div class="promek-fokus-color-card promek-fokus-blue">
-            <div class="promek-fokus-color-title">🔵 Голубой — Поддержка / Стабильность</div>
-            <p><strong>Стратегия:</strong> Держим в наличии, продаем по запросу, обеспечиваем стабильность поставок и сервиса.</p>
-            <p><strong>Примеры:</strong> <span class="promek-highlight">Рубеж</span>, Sigur, Proxway.</p>
-        </div>
+        <!-- Основной контент страницы (например, "О портале") -->
+        <div class="promek-main-content">
+            <div class="promek-about-section">
 
-        <div class="promek-fokus-color-card promek-fokus-white">
-            <div class="promek-fokus-color-title">⚪ Без цвета — Пассив / Остаточный</div>
-            <p><strong>Стратегия:</strong> Не инвестируем ресурсы, не делаем активных предложений. Продаем, только если клиент сам запросил.</p>
-            <p><strong>Примеры:</strong> <span class="promek-highlight">Блокпост</span>, отдельные позиции других брендов.</p>
-        </div>
+                <h1>О портале</h1>
 
-    </div>
+                <!-- Блок поиска -->
+                <div class="promek-search-container">
+                    <form onsubmit="alert('Функция поиска пока в разработке. Введите запрос и нажмите \'Найти\' для демонстрации.'); return false;"> <!-- Временная форма -->
+                        <input type="text" class="promek-search-box" placeholder="Введите запрос для поиска по порталу...">
+                        <button type="submit" class="promek-search-button">Найти</button>
+                    </form>
+                </div>
+                <!-- / Блок поиска -->
 
-    <h2 class="promek-fokus-algo-title">Алгоритм подбора оборудования</h2>
-    <p>При подборе решений для клиента менеджер руководствуется следующим порядком:</p>
-    <ol>
-        <li><strong>Проверить «висяки»:</strong> Помочь коллеге или разгрузить склад. (См. реестр «висяков»)</li>
-        <li><strong>Проверить спецпредложения:</strong> Если решение релевантно задаче клиента.</li>
-        <li><strong>Предложить фокусные бренды (<span style="color:#ffa500;">🟠</span> или <span style="color:#007bff;">🔵</span>):</strong> Особенно если они соответствуют задаче клиента и его RFM-сегменту (см. раздел "RFM-анализ").</li>
-        <li><strong>Предложить решение, а не просто товар:</strong> Всегда фокусируемся на том, как решить задачу клиента.</li>
-    </ol>
+                <div class="promek-about-intro">
+                    <p>Добро пожаловать на <strong>Портал книги продаж Протэк</strong>!</p>
+                    <p>Это ваш центральный источник информации, инструкций и регламентов для эффективной работы в отделе продаж.</p>
+                </div>
 
-    <h3>Важно!</h3>
-    <ul>
-        <li>Сегмент фокусных брендов пересматривается не чаще <strong>1 раза в квартал</strong>.</li>
-        <li>Маржинальность важнее оборота. Не создаем искусственного спроса на низкомаржинальные позиции.</li>
-        <li>Новые фокусные бренды или решения тестируем сначала на лояльных клиентах.</li>
-    </ul>
+                <h2>Зачем создан портал?</h2>
+                <p>Портал создан для того, чтобы:</p>
+                <div class="promek-about-goals">
+                    <ul>
+                        <li><strong>Систематизировать знания:</strong> Все важные правила, процессы и скрипты собраны в одном месте.</li>
+                        <li><strong>Ускорить обучение:</strong> Новым менеджерам проще влиться в работу, используя готовые инструкции.</li>
+                        <li><strong>Унифицировать процессы:</strong> Все сотрудники работают по одним и тем же проверенным алгоритмам.</li>
+                        <li><strong>Повысить эффективность:</strong> Быстрый доступ к информации экономит время на поиски и уточнения.</li>
+                    </ul>
+                </div>
 
-</div>
+                <h2>Для кого этот портал?</h2>
+                <p>Портал предназначен для:</p>
+                <ul>
+                    <li><strong>МАП (Менеджеров активных продаж)</strong> — для стратегии поиска и удержания клиентов.</li>
+                    <li><strong>МСП (Менеджеров сопровождения продаж)</strong> — для исполнения и контроля заказов.</li>
+                    <li><strong>РОП (Руководителя отдела продаж)</strong> — для контроля, анализа и планирования.</li>
+                    <li><strong>Новых сотрудников</strong> — для быстрого старта и понимания процессов.</li>
+                </ul>
+
+                <h2>Что вы найдете на портале?</h2>
+                <p>Здесь вы можете найти информацию по следующим разделам:</p>
+                <ul>
+                    <!-- Ссылки на фактические страницы -->
+                    <li><a href="o-kompanii">О компании</a> — история, миссия, ценности Протэк.</li>
+                    <!-- Внешняя ссылка на Фокусные бренды, переход в той же вкладке -->
+                    <li><a href="https://mafusailn.github.io/Protech/fokusnye-brendy.html">Фокусные бренды</a> — цветовая маркировка и стратегия работы.</li>
+                    <!-- Внешняя ссылка на Категории портфеля, переход в той же вкладке -->
+                    <li><a href="https://mafusailn.github.io/Protech/kategorii-portfelya">Категории портфеля</a> — список основных направлений и фокусные бренды в них.</li>
+                    <li><a href="matrica-raci">Матрица RACI</a> — распределение ролей и ответственности между МАП, МСП и РОП.</li>
+                    <li><strong>RFM-анализ</strong> — сегментация клиентов и стратегии работы.</li>
+                    <li><strong>Воронка продаж МСП</strong> — этапы, действия, SLA.</li>
+                    <li><strong>Алгоритмы работы</strong> — рабочий день МАП/МСП, план звонков.</li>
+                    <li><strong>Финансы и риски</strong> — работа с ПДЗ, отсрочка платежа.</li>
+                    <li><strong>Дашборд</strong> — ссылки на аналитические отчеты.</li>
+                </ul>
+
+                <h2>Как пользоваться порталом?</h2>
+                <p>Используйте боковое меню (при наведении на левую сторону экрана) или ссылки в списке "Что вы найдете на портале?" для перехода между разделами. Информация структурирована по принципу "от общего к частному".</p>
+                <p>Также вы можете воспользоваться строкой поиска вверху, чтобы найти нужную информацию по ключевым словам.</p> <!-- Добавлено упоминание -->
+
+            </div> <!-- Закрывающий тег div .promek-about-section -->
+        </div> <!-- Закрывающий тег div .promek-main-content -->
+    </div> <!-- Закрывающий тег div .promek-page-container -->
 
 </body>
 </html>
