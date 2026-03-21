@@ -3,299 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>О портале - Книга продаж Протэк</title>
+    <title>Категории портфеля - Книга продаж Протэк</title>
     <style>
-        /* Сброс отступов для body */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* Контейнер для всей страницы (меню + контент) */
-        .promek-page-container {
-            display: flex;
-            min-height: 100vh;
-        }
-
-        /* Стили для бокового меню */
-        .promek-sidebar {
-            width: 60px;
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: #f0f4ff;
-            transition: width 0.3s ease;
-            overflow: hidden;
-            z-index: 1000;
-            border-right: 1px solid #cfd6e5;
-        }
-
-        .promek-menu-item {
-            color: #0000ff;
-            text-decoration: none;
-            display: block;
-            padding: 15px 10px;
-            white-space: nowrap;
-            overflow: hidden;
-            transition: padding 0.3s ease;
-            border-bottom: 1px solid #dfe4f0;
-        }
-
-        .promek-menu-item:hover {
-            background-color: #e0e7ff;
-        }
-
-        .promek-menu-icon {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            line-height: 24px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 16px;
-            margin-right: 10px;
-            vertical-align: middle;
-        }
-
-        .promek-menu-text {
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-
-        .promek-sidebar:hover {
-            width: 250px;
-        }
-
-        .promek-sidebar:hover .promek-menu-text {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .promek-sidebar:hover .promek-menu-item {
-            padding: 15px 20px;
-        }
-
-        /* Основной контент */
-        .promek-main-content {
-            flex: 1;
-            margin-left: 60px;
-            padding: 20px;
-            background-color: #ffffff;
-        }
-
-        /* Шапка с логотипом и значком */
-        .promek-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #0000ff;
-        }
-        .promek-logo {
-            width: 300px; /* Адаптивная ширина под логотип со слоганом */
-            height: auto;
-            margin-right: 20px;
-            cursor: pointer;
-        }
-        .promek-icon {
-            width: 60px;
-            height: 60px;
-            cursor: pointer;
-        }
-        .promek-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        /* Стили для основного контента */
-        .promek-about-section {
+        .promek-category-section {
+            font-family: 'Arial', sans-serif; /* Замените на Actay, если подключен */
+            max-width: 800px;
             margin: 0 auto;
             padding: 20px;
             line-height: 1.6;
         }
-        .promek-about-section h1,
-        .promek-about-section h2,
-        .promek-about-section h3 {
-            color: #0000ff;
+        .promek-category-section h1,
+        .promek-category-section h2,
+        .promek-category-section h3 {
+            color: #0000ff; /* Основной синий */
         }
-        .promek-about-section h1 {
+        .promek-category-section h1 {
             border-bottom: 3px solid #0000ff;
             padding-bottom: 10px;
         }
-
-        /* Поиск */
-        .promek-search-container {
-            margin-bottom: 20px;
-            padding: 10px;
-            background-color: #f9f9ff;
-            border-radius: 5px;
-            border: 1px solid #cfd6e5;
-        }
-        .promek-search-box {
-            width: calc(100% - 22px);
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #0000ff;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        .promek-search-box:focus {
-            outline: none;
-            box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
-        }
-        .promek-search-button {
-            padding: 10px 15px;
-            margin-left: 10px;
-            background-color: #0000ff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .promek-search-button:hover {
-            background-color: #0000cc;
-        }
-
-        .promek-about-intro {
-            background-color: #f9f9ff;
-            padding: 15px;
-            border-left: 4px solid #0000ff;
+        .promek-nav {
             margin: 20px 0;
+            padding: 10px;
+            background-color: #f0f4ff;
+            border-radius: 5px;
+            text-align: center;
         }
-        .promek-about-goals ul {
-            list-style-type: circle;
-            padding-left: 20px;
+        .promek-nav a {
+            color: #0000ff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
         }
-        .promek-about-goals li {
-            margin-bottom: 8px;
+        .promek-nav a:hover {
+            text-decoration: underline;
+        }
+        .promek-category-item {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #cfd6e5;
+            border-radius: 8px;
+            background-color: #ffffff;
+        }
+        .promek-category-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #0000ff;
+            margin-bottom: 10px;
+        }
+        .promek-brands-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .promek-brands-list li {
+            margin-bottom: 5px;
+        }
+        .promek-brand-orange {
+            color: #ff6600; /* Оранжевый */
+            font-weight: bold;
+        }
+        .promek-brand-blue {
+            color: #007bff; /* Голубой */
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-<div class="promek-page-container">
-    <!-- Боковое меню -->
-    <div class="promek-sidebar">
-        <a href="o-portalie" class="promek-menu-item">
-            <span class="promek-menu-icon">ℹ️</span>
-            <span class="promek-menu-text">О портале</span>
-        </a>
-        <a href="o-kompanii" class="promek-menu-item">
-            <span class="promek-menu-icon">🏢</span>
-            <span class="promek-menu-text">О компании</span>
-        </a>
-        <a href="https://mafusailn.github.io/Protech/fokusnye-brendy.html" class="promek-menu-item">
-            <span class="promek-menu-icon">🎯</span>
-            <span class="promek-menu-text">Фокусные бренды</span>
-        </a>
-        <a href="https://mafusailn.github.io/Protech/kategorii-portfelya" class="promek-menu-item">
-            <span class="promek-menu-icon">📦</span>
-            <span class="promek-menu-text">Категории портфеля</span>
-        </a>
-        <a href="matrica-raci" class="promek-menu-item">
-            <span class="promek-menu-icon">📋</span>
-            <span class="promek-menu-text">Матрица RACI</span>
-        </a>
-        <a href="#" class="promek-menu-item">
-            <span class="promek-menu-icon">📊</span>
-            <span class="promek-menu-text">RFM-анализ</span>
-        </a>
-        <a href="#" class="promek-menu-item">
-            <span class="promek-menu-icon">🔄</span>
-            <span class="promek-menu-text">Воронка МСП</span>
-        </a>
-        <a href="#" class="promek-menu-item">
-            <span class="promek-menu-icon">⚙️</span>
-            <span class="promek-menu-text">Алгоритмы работы</span>
-        </a>
-        <a href="#" class="promek-menu-item">
-            <span class="promek-menu-icon">💰</span>
-            <span class="promek-menu-text">Финансы и риски</span>
-        </a>
-        <a href="#" class="promek-menu-item">
-            <span class="promek-menu-icon">📈</span>
-            <span class="promek-menu-text">Дашборд</span>
-        </a>
+<div class="promek-category-section">
+
+    <h1>Категории портфеля и фокусные бренды</h1>
+
+    <!-- Навигация -->
+    <div class="promek-nav">
+        <a href="#section-fokus">&larr; Фокусные бренды</a> |
+        <a href="#top">Вверх</a> |
+        <a href="#section-rfm">Следующий раздел &rarr;</a>
     </div>
 
-    <!-- Основной контент -->
-    <div class="promek-main-content">
-        <!-- Шапка с логотипом и значком -->
-        <div class="promek-header">
-            <!-- Логотип -->
-            <a href="#top">
-                <img src="file:///C:/Users/mafus/Downloads/Telegram%20Desktop/Логотип_Протэк_со_слоганом_2026_без_полей.png" 
-                     alt="Протэк" class="promek-logo">
-            </a>
-            <!-- Значок -->
-            <a href="#top">
-                <img src="file:///C:/Users/mafus/Downloads/Telegram%20Desktop/Значок_Белый_на%20Синем%20фоне%20круга.png" 
-                     alt="Значок Протэк" class="promek-icon">
-            </a>
-        </div>
+    <p>Этот раздел описывает основные категории товаров в портфеле Протэк и фокусные бренды (оранжевые и голубые), работа с которыми имеет стратегическое значение.</p>
 
-        <!-- Основной текст -->
-        <div class="promek-about-section">
-            <h1>О портале</h1>
+    <hr id="top"/>
 
-            <!-- Поиск -->
-            <div class="promek-search-container">
-                <form onsubmit="alert('Функция поиска пока в разработке.'); return false;">
-                    <input type="text" class="promek-search-box" placeholder="Введите запрос для поиска...">
-                    <button type="submit" class="promek-search-button">Найти</button>
-                </form>
-            </div>
-
-            <div class="promek-about-intro">
-                <p>Добро пожаловать на <strong>Портал книги продаж Протэк</strong>!</p>
-                <p>Это ваш центральный источник информации, инструкций и регламентов для эффективной работы в отделе продаж.</p>
-            </div>
-
-            <h2>Зачем создан портал?</h2>
-            <p>Портал создан для того, чтобы:</p>
-            <div class="promek-aboutals">
-                <ul>
-                    <li><strong>Систематизировать знания:</strong> Все важные правила, процессы и скрипты собраны в одном месте.</li>
-                    <li><strong>Ускорить обучение:</strong> Новым менеджерам проще влиться в работу, используя готовые инструкции.</li>
-                    <li><strong>Унифицировать процессы:</strong> Все сотрудники работают по одним и тем же проверенным алгоритмам.</li>
-                    <li><strong>Повысить эффективность:</strong> Быстрый доступ к информации экономит время на поиски и уточнения.</li>
-                </ul>
-            </div>
-
-            <h2>Для кого этот портал?</h2>
-            <p>Портал предназначен для:</p>
-            <ul>
-                <li><strong>МАП (Менеджеров активных продаж)</strong> — для стратегии поиска и удержания клиентов.</li>
-                <li><strong>МСП (Менеджеров сопровождения продаж)</strong> — для исполнения и контроля заказов.</li>
-                <li><strong>РОП (Руководителя отдела продаж)</strong> — для контроля, анализа и планирования.</li>
-                <li><strong>Новых сотрудников</strong> — для быстрого старта и понимания процессов.</li>
-            </ul>
-
-            <h2>Что вы найдете на портале?</h2>
-            <p>Здесь вы можете найти информацию по следующим разделам:</p>
-            <ul>
-                <li><a href="o-kompanii">О компании</a> — история, миссия, ценности Протэк.</li>
-                <li><a href="https://mafusailn.github.io/Protech/fokusnye-brendy.html">Фокусные бренды</a> — цветовая маркировка и стратегия работы.</li>
-                <li><a href="https://mafusailn.github.io/Protech/kategorii-portfelya">Категории портфеля</a> — список основных направлений и фокусные бренды в них.</li>
-                <li><a href="matrica-raci">Матрица RACI</a> — распределение ролей и ответственности между МАП, МСП и РОП.</li>
-                <li><strong>RFM-анализ</strong> — сегментация клиентов и стратегии работы.</li>
-                <li><strong>Воронка продаж МСП</strong> — этапы, действия, SLA.</li>
-                <li><strong>Алгоритмы работы</strong> — рабочий день МАП/МСП, план звонков.</li>
-                <li><strong>Финансы и риски</strong> — работа с ПДЗ, отсрочка платежа.</li>
-                <li><strong>Дашборд</strong> — ссылки на аналитические отчеты.</li>
-            </ul>
-
-            <h2>Как пользоваться порталом?</h2>
-            <p>Используйте боковое меню (при наведении на левую сторону экрана) или ссылки в списке "Что вы найдете на портале?" для перехода между разделами. Информация структурирована по принципу "от общего к частному".</p>
-            <p>Также вы можете воспользоваться строкой поиска вверху, чтобы найти нужную информацию по ключевым словам.</p>
-        </div>
+    <div class="promek-category-item">
+        <div class="promek-category-title">1. SC&A (Контроль и управление доступом)</div>
+        <ul class="promek-brands-list">
+            <li><span class="promek-brand-orange">🟠 Оранжевый:</span> Carddex (турникеты, ограждения), Esmart (BLE)</li>
+            <li><span class="promek-brand-blue">🔵 Голубой:</span> Рубеж (адресная линейка), Sigur</li>
+        </ul>
     </div>
+
+    <div class="promek-category-item">
+        <div class="promek-category-title">2. Видеонаблюдение</div>
+        <ul class="promek-brands-list">
+            <li><span class="promek-brand-orange">🟠 Оранжевый:</span> Dahua (включая DAHO)</li>
+            <li><span class="promek-brand-blue">🔵 Голубой:</span> iCan (аналоги Hikvision)</li>
+        </ul>
+    </div>
+
+    <div class="promek-category-item">
+        <div class="promek-category-title">3. Охранно-пожарная сигнализация (ОПС)</div>
+        <ul class="promek-brands-list">
+            <li><span class="promek-brand-blue">🔵 Голубой:</span> Болид, Рубеж (адресная линейка)</li>
+            <li><span class="promek-brand-orange">🟠 Оранжевый:</span> iFlow (интеграция, защита проекта)</li>
+        </ul>
+    </div>
+
+    <div class="promek-category-item">
+        <div class="promek-category-title">4. Турникеты и ограждения</div>
+        <ul class="promek-brands-list">
+            <li><span class="promek-brand-orange">🟠 Оранжевый:</span> Carddex</li>
+            <li><span class="promek-brand-blue">🔵 Голубой:</span> Perco (проектный бренд)</li>
+        </ul>
+    </div>
+
+    <div class="promek-category-item">
+        <div class="promek-category-title">5. СКУД (Контроллеры)</div>
+        <ul class="promek-brands-list">
+            <li><span class="promek-brand-orange">🟠 Оранжевый:</span> Dahua (DAHO)</li>
+            <li><span class="promek-brand-blue">🔵 Голубой:</span> Рубеж (сетевые контроллеры)</li>
+        </ul>
+    </div>
+
+    <div class="promek-category-item">
+        <div class="promek-category-title">6. Системы оповещения</div>
+        <ul class="promek-brands-list">
+            <li><span class="promek-brand-blue">🔵 Голубой:</span> Орион (Арсенал), Титан (Кадет)</li>
+        </ul>
+    </div>
+
+    <div class="promek-category-item">
+        <div class="promek-category-title">7. Досмотровое оборудование</div>
+        <ul class="promek-brands-list">
+            <li><span class="promek-brand-blue">🔵 Голубой:</span> Garrett (металлоискатели)</li>
+        </ul>
+    </div>
+
+    <div class="promek-category-item">
+        <div class="promek-category-title">8. Автоматика (Шлагбаумы и пр.)</div>
+        <ul class="promek-brands-list">
+            <li><span class="promek-brand-blue">🔵 Голубой:</span> Nice (Nice-Worm, Faac)</li>
+        </ul>
+    </div>
+
+    <div class="promek-category-item">
+        <div class="promek-category-title">9. RFID / BLE / Считыватели</div>
+        <ul class="promek-brands-list">
+            <li><span class="promek-brand-orange">🟠 Оранжевый:</span> Esmart (BLE)</li>
+            <li><span class="promek-brand-blue">🔵 Голубой:</span> Proxway (RFID)</li>
+        </ul>
+    </div>
+
+    <div class="promek-category-item">
+        <div class="promek-category-title">10. Радиоканальные ОПС</div>
+        <ul class="promek-brands-list">
+            <li><span class="promek-brand-blue">🔵 Голубой:</span> Levicom</li>
+        </ul>
+    </div>
+
+    <!-- Навигация внизу -->
+    <div class="promek-nav">
+        <a href="#section-fokus">&larr; Фокусные бренды</a> |
+        <a href="#top">Вверх</a> |
+        <a href="#section-rfm">Следующий раздел &rarr;</a>
+    </div>
+
 </div>
 
 </body>
