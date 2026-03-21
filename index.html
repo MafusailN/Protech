@@ -96,7 +96,7 @@
             border-bottom: 2px solid #0000ff;
         }
         .promek-logo {
-            width: 300px; /* Адаптивная ширина под логотип со слоганом */
+            width: 300px;
             height: auto;
             margin-right: 20px;
             cursor: pointer;
@@ -128,40 +128,6 @@
             padding-bottom: 10px;
         }
 
-        /* Поиск */
-        .promek-search-container {
-            margin-bottom: 20px;
-            padding: 10px;
-            background-color: #f9f9ff;
-            border-radius: 5px;
-            border: 1px solid #cfd6e5;
-        }
-        .promek-search-box {
-            width: calc(100% - 22px);
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #0000ff;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        .promek-search-box:focus {
-            outline: none;
-            box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
-        }
-        .promek-search-button {
-            padding: 10px 15px;
-            margin-left: 10px;
-            background-color: #0000ff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .promek-search-button:hover {
-            background-color: #0000cc;
-        }
-
         .promek-about-intro {
             background-color: #f9f9ff;
             padding: 15px;
@@ -180,13 +146,13 @@
 <body>
 
 <div class="promek-page-container">
-    <!-- Боковое меню -->
+    <!-- Боковое мен -->
     <div class="promek-sidebar">
-        <a href="o-portalie" class="promek-menu-item">
+        <a href="#top" class="promek-menu-item">
             <span class="promek-menu-icon">ℹ️</span>
             <span class="promek-menu-text">О портале</span>
         </a>
-        <a href="o-kompanii" class="promek-menu-item">
+        <a href="o-kompanii.html" class="promek-menu-item">
             <span class="promek-menu-icon">🏢</span>
             <span class="promek-menu-text">О компании</span>
         </a>
@@ -198,7 +164,7 @@
             <span class="promek-menu-icon">📦</span>
             <span class="promek-menu-text">Категории портфеля</span>
         </a>
-        <a href="matrica-raci" class="promek-menu-item">
+        <a href="matrica-raci.html" class="promek-menu-item">
             <span class="promek-menu-icon">📋</span>
             <span class="promek-menu-text">Матрица RACI</span>
         </a>
@@ -230,27 +196,19 @@
         <div class="promek-header">
             <!-- Логотип -->
             <a href="#top">
-                <img src="file:///C:/Users/mafus/Downloads/Telegram%20Desktop/Логотип_Протэк_со_слоганом_2026_без_полей.png" 
+                <img src="https://github.com/MafusailN/Protech/blob/main/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF_%D0%9F%D1%80%D0%BE%D1%82%D1%8D%D0%BA_%D1%81%D0%BE_%D1%81%D0%BB%D0%BE%D0%B3%D0%B0%D0%BD%D0%BE%D0%BC_2026_%D1%81%D0%BB%D0%BE%D0%B3%D0%B0%D0%BD_%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B8_%D0%BF%D0%BE%D0%BB%D1%8F.svg?raw=true"
                      alt="Протэк" class="promek-logo">
             </a>
             <!-- Значок -->
             <a href="#top">
-                <img src="file:///C:/Users/mafus/Downloads/Telegram%20Desktop/Значок_Белый_на%20Синем%20фоне%20круга.png" 
+                <img src="https://github.com/MafusailN/Protech/blob/main/%D0%97%D0%BD%D0%B0%D1%87%D0%BE%D0%BA_%D0%91%D0%B5%D0%BB%D1%8B%D0%B9_%D0%BD%D0%B0-%D0%A1%D0%B8%D0%BD%D0%B5%D%BC-%D1%84%D0%BE%D0%BD%D0%B5-%D0%BA%D1%80%D1%83%D0%B3%D0%B0.svg?raw=true"
                      alt="Значок Протэк" class="promek-icon">
             </a>
         </div>
 
         <!-- Основной текст -->
         <div class="promek-about-section">
-            <h1>О портале</h1>
-
-            <!-- Поиск -->
-            <div class="promek-search-container">
-                <form onsubmit="alert('Функция поиска пока в разработке.'); return false;">
-                    <input type="text" class="promek-search-box" placeholder="Введите запрос для поиска...">
-                    <button type="submit" class="promek-search-button">Найти</button>
-                </form>
-            </div>
+            <h1 id="top">О портале</h1>
 
             <div class="promek-about-intro">
                 <p>Добро пожаловать на <strong>Портал книги продаж Протэк</strong>!</p>
@@ -259,7 +217,7 @@
 
             <h2>Зачем создан портал?</h2>
             <p>Портал создан для того, чтобы:</p>
-            <div class="promek-aboutals">
+            <div class="promek-about-goals">
                 <ul>
                     <li><strong>Систематизировать знания:</strong> Все важные правила, процессы и скрипты собраны в одном месте.</li>
                     <li><strong>Ускорить обучение:</strong> Новым менеджерам проще влиться в работу, используя готовые инструкции.</li>
@@ -280,10 +238,10 @@
             <h2>Что вы найдете на портале?</h2>
             <p>Здесь вы можете найти информацию по следующим разделам:</p>
             <ul>
-                <li><a href="o-kompanii">О компании</a> — история, миссия, ценности Протэк.</li>
+                <li><a href="o-kompanii.html">О компании</a> — история, миссия, ценности Протэк.</li>
                 <li><a href="https://mafusailn.github.io/Protech/fokusnye-brendy.html">Фокусные бренды</a> — цветовая маркировка и стратегия работы.</li>
                 <li><a href="https://mafusailn.github.io/Protech/kategorii-portfelya">Категории портфеля</a> — список основных направлений и фокусные бренды в них.</li>
-                <li><a href="matrica-raci">Матрица RACI</a> — распределение ролей и ответственности между МАП, МСП и РОП.</li>
+                <li><a href="matrica-raci.html">Матрица RACI</a> — распределение ролей и ответственности между МАП, МСП и РОП.</li>
                 <li><strong>RFM-анализ</strong> — сегментация клиентов и стратегии работы.</li>
                 <li><strong>Воронка продаж МСП</strong> — этапы, действия, SLA.</li>
                 <li><strong>Алгоритмы работы</strong> — рабочий день МАП/МСП, план звонков.</li>
@@ -293,7 +251,7 @@
 
             <h2>Как пользоваться порталом?</h2>
             <p>Используйте боковое меню (при наведении на левую сторону экрана) или ссылки в списке "Что вы найдете на портале?" для перехода между разделами. Информация структурирована по принципу "от общего к частному".</p>
-            <p>Также вы можете воспользоваться строкой поиска вверху, чтобы найти нужную информацию по ключевым словам.</p>
+            <p>Также вы можете воспользоваться строкой поиска вверху (когда будет реализована).</p>
         </div>
     </div>
 </div>
