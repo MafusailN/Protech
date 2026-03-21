@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О портале - Книга продаж Протэк</title>
+    <style>
+        .promek-about-section {
+            font-family: 'Arial', sans-serif; /* Замените на Actay, если подключен */
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .promek-about-section h1,
+        .promek-about-section h2,
+        .promek-about-section h3 {
+            color: #0000ff; /* Основной синий */
+        }
+        .promek-about-section h1 {
+            border-bottom: 3px solid #0000ff;
+            padding-bottom: 10px;
+        }
+        .promek-nav {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f0f4ff;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .promek-nav a {
+            color: #0000ff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        .promek-nav a:hover {
+            text-decoration: underline;
+        }
+        .promek-about-intro {
+            background-color: #f9f9ff; /* Вторичный светлый фон */
+            padding: 15px;
+            border-left: 4px solid #0000ff;
+            margin: 20px 0;
+        }
+        .promek-about-goals ul {
+            list-style-type: circle; /* Менее агрессивный маркер */
+            padding-left: 20px;
+        }
+        .promek-about-goals li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="promek-about-section">
+
+    <h1>О портале</h1>
+
+    <!-- Навигация -->
+    <div class="promek-nav">
+        <!-- Ссылки на фактические страницы -->
+        <a href="fokusnye-brendy">Фокусные бренды &rarr;</a> |
+        <a href="kategorii-portfelya">Категории портфеля &rarr;</a>
+    </div>
+
+    <div class="promek-about-intro">
+        <p>Добро пожаловать на <strong>Портал книги продаж Протэк</strong>!</p>
+        <p>Это ваш центральный источник информации, инструкций и регламентов для эффективной работы в отделе продаж.</p>
+    </div>
+
+    <h2>Зачем создан портал?</h2>
+    <p>Портал создан для того, чтобы:</p>
+    <div class="promek-about-goals">
+        <ul>
+            <li><strong>Систематизировать знания:</strong> Все важные правила, процессы и скрипты собраны в одном месте.</li>
+            <li><strong>Ускорить обучение:</strong> Новым менеджерам проще влиться в работу, используя готовые инструкции.</li>
+            <li><strong>Унифицировать процессы:</strong> Все сотрудники работают по одним и тем же проверенным алгоритмам.</li>
+            <li><strong>Повысить эффективность:</strong> Быстрый доступ к информации экономит время на поиски и уточнения.</li>
+        </ul>
+    </div>
+
+    <h2>Для кого этот портал?</h2>
+    <p>Портал предназначен для:</p>
+    <ul>
+        <li><strong>МАП (Менеджеров активных продаж)</strong> — для стратегии поиска и удержания клиентов.</li>
+        <li><strong>МСП (Менеджеров сопровождения продаж)</strong> — для исполнения и контроля заказов.</li>
+        <li><strong>РОП (Руководителя отдела продаж)</strong> — для контроля, анализа и планирования.</li>
+        <li><strong>Новых сотрудников</strong> — для быстрого старта и понимания процессов.</li>
+    </ul>
+
+    <h2>Что вы найдете на портале?</h2>
+    <p>Здесь вы можете найти информацию по следующим разделам:</p>
+    <ul>
+        <!-- Ссылки на фактические страницы -->
+        <li><a href="fokusnye-brendy">Фокусные бренды</a> — цветовая маркировка и стратегия работы.</li>
+        <li><a href="kategorii-portfelya">Категории портфеля</a> — список основных направлений и фокусные бренды в них.</li>
+        <li><strong>RFM-анализ</strong> — сегментация клиентов и стратегии работы.</li>
+        <li><strong>Воронка продаж МСП</strong> — этапы, действия, SLA.</li>
+        <li><strong>Алгоритмы работы</strong> — рабочий день МАП/МСП, план звонков.</li>
+        <li><strong>Финансы и риски</strong> — работа с ПДЗ, отсрочка платежа.</li>
+        <li><strong>Дашборд</strong> — ссылки на аналитические отчеты.</li>
+    </ul>
+
+    <h2>Как пользоваться порталом?</h2>
+    <p>Используйте главное меню (если оно настроено в Битрикс24) или ссылки навигации вверху/внизу страниц для перехода между разделами. Информация структурирована по принципу "от общего к частному".</p>
+
+    <!-- Навигация внизу -->
+    <div class="promek-nav">
+        <!-- Ссылки на фактические страницы -->
+        <a href="fokusnye-brendy">Фокусные бренды &rarr;</a> |
+        <a href="kategorii-portfelya">Категории портфеля &rarr;</a>
+    </div>
+
+</div>
+
+</body>
+</html>
