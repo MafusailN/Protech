@@ -1,11 +1,74 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <title>Мой сайт</title>
-</head>
-<body>
-  <h1>Привет! Это мой сайт на GitHub</h1>
-  <p>Работает через GitHub Pages, без сервера.</p>
-</body>
-</html>
+<style>
+  /* Стили для карточки бренда */
+  .promek-brand-card {
+    border: 2px solid #0000ff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0;
+    background: #ffffff;
+    font-family: 'Open Sans', Arial, sans-serif; /* Замените на Actay, если подключен */
+    box-shadow: 0 4px 6px rgba(0,0,255,0.1);
+    transition: transform 0.2s;
+  }
+  .promek-brand-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,255,0.2);
+  }
+  .promek-brand-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #cfd6e5;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+  }
+  .promek-brand-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0000ff;
+    margin: 0;
+  }
+  .promek-brand-status {
+    background: #0000ff;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .promek-brand-status.blue {
+    background: #cfd6e5;
+    color: #0000ff;
+  }
+  .promek-brand-content {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+  }
+  .promek-brand-list {
+    margin: 10px 0;
+    padding-left: 20px;
+  }
+  .promek-brand-list li {
+    margin-bottom: 5px;
+  }
+</style>
+
+<!-- Карточка бренда (Пример для iFlow) -->
+<div class="promek-brand-card">
+  <div class="promek-brand-header">
+    <h3 class="promek-brand-title">iFlow</h3>
+    <span class="promek-brand-status">🟠 Фокус</span>
+  </div>
+  <div class="promek-brand-content">
+    <p><strong>Позиционирование:</strong> Premium / BLE / Дизайн</p>
+    <p><strong>Ключевой аргумент:</strong> Металлический корпус, интеграция, защита проекта</p>
+    <p><strong>Для каких клиентов:</strong> Горячие (А), проекты с бюджетом</p>
+    <ul class="promek-brand-list">
+      <li>✅ Маржинальность высокая</li>
+      <li>✅ Есть защита проекта</li>
+      <li>⚠️ Срок поставки 10-14 дней</li>
+    </ul>
+  </div>
+</div>
