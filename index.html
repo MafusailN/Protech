@@ -97,7 +97,7 @@
         /* Шапка с логотипом и значком */
         .promek-header {
             display: flex;
-            align-items: center;
+            align-items: flex-start; /* Выравнивание по верхнему краю */
             margin-bottom: 30px;
             padding-bottom: 20px;
             border-bottom: 2px solid #0657ba; /* Цвет границы шапки */
@@ -105,12 +105,25 @@
         .promek-logo {
             width: 300px; /* Ширина логотипа */
             height: auto; /* Сохраняем пропорции */
-            margin-right: 20px; /* Отступ справа */
+            margin-right: 20px; /* Отступ справа от логотипа */
             cursor: pointer; /* Курсор-указатель при наведении */
+            display: flex; /* Flexbox для внутреннего выравнивания */
+            flex-direction: column; /* Тексты в столбик */
+            justify-content: center; /* Центрирование по вертикали (Y) внутри логотипа */
+            align-items: center; /* Центрирование по горизонтали (X) внутри логотипа */
+        }
+        .promek-icon-wrapper {
+             /* Обёртка для значка */
+            display: flex; /* Flexbox для центрирования содержимого внутри обёртки */
+            justify-content: center; /* Центрирование по горизонтали (X) */
+            align-items: center; /* Центрирование по вертикали (Y) */
+            align-self: flex-start; /* Выравнивание самой обёртки по верхнему краю flex-контейнера (.promek-header) */
+            margin-top: -10px; /* Поднимаем обёртку (и значок) на 10px (1 см) вверх */
         }
         .promek-icon {
             width: 60px; /* Ширина значка */
             height: 60px; /* Высота значка */
+            margin-right: 15px; /* Отступ справа от значка, чтобы был зазор до логотипа */
             cursor: pointer; /* Курсор-указатель при наведении */
         }
         .promek-icon img {
@@ -166,7 +179,7 @@
         </a>
         <a href="https://mafusailn.github.io/Protech/fokusnye-brendy.html  " class="promek-menu-item">
             <span class="promek-menu-icon">🎯</span>
-            <span class="">Фокусные бренды</span>
+            <span class="promek-menu-text">Фокусные бренды</span>
         </a>
         <a href="https://mafusailn.github.io/Protech/kategorii-portfelya  " class="promek-menu-item">
             <span class="promek-menu-icon">📦</span>
@@ -202,20 +215,22 @@
     <div class="promek-main-content">
         <!-- Шапка с логотипом и значком -->
         <div class="promek-header">
+            <!-- Значок -->
+            <a href="#top" class="promek-icon-wrapper">
+                <div class="promek-icon">
+                    <img src="https://github.com/MafusailN/Protech/blob/Logo-and-Icon/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%B7%D0%BD%D0%B0%D1%87%D0%BE%D0%BA%20%D1%81%D0%B8%D0%BD%D0%B8%D0%B9%20(%230657ba).png?raw=true"
+                         alt="Значок Протэк">
+                </div>
+            </a>
             <!-- Логотип -->
             <a href="#top">
                 <img src="https://github.com/MafusailN/Protech/blob/Logo-and-Icon/%D0%9D%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%BB%D0%BE%D0%B3%D0%BE%20(%230657ba).png?raw=true"
                      alt="Протэк" class="promek-logo">
             </a>
-            <!-- Значок -->
-            <a href="#top">
-                <img src="https://github.com/MafusailN/Protech/blob/Logo-and-Icon/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%B7%D0%BD%D0%B0%D1%87%D0%BE%D0%BA%20%D1%81%D0%B8%D0%BD%D0%B8%D0%B9%20(%230657ba).png?raw=true"
-                     alt="Значок Протэк" class="promek-icon">
-            </a>
         </div>
 
         <!-- Основной текст -->
-        <div class="promek-about-section">
+="promek-about-section">
             <h1 id="top">О портале</h1>
 
             <div class="promek-about-intro">
