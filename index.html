@@ -1,44 +1,113 @@
-<style>
-  .promek-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-family: Arial, sans-serif;
-  }
-  .promek-table th {
-    background: #0000ff;
-    color: #ffffff;
-    padding: 12px;
-    text-align: left;
-  }
-  .promek-table td {
-    border: 1px solid #cfd6e5;
-    padding: 10px;
-  }
-  .promek-table tr:nth-child(even) {
-    background: #f9f9ff;
-  }
-</style>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фокусные бренды - Книга продаж Протэк</title>
+    <!-- Стили можно вставить в HTML-блок на странице -->
+    <style>
+        .promek-fokus-section {
+            font-family: 'Arial', sans-serif; /* Замените на Actay, если подключен */
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .promek-fokus-section h1,
+        .promek-fokus-section h2,
+        .promek-fokus-section h3 {
+            color: #0000ff; /* Основной синий */
+        }
+        .promek-fokus-section h1 {
+            border-bottom: 3px solid #0000ff;
+            padding-bottom: 10px;
+        }
+        .promek-fokus-definition {
+            background-color: #f9f9ff; /* Вторичный светлый фон */
+            padding: 15px;
+            border-left: 4px solid #0000ff;
+            margin: 20px 0;
+        }
+        .promek-fokus-colors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .promek-fokus-color-card {
+            border: 1px solid #cfd6e5;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        .promek-fokus-orange { background-color: #fff4e5; border-left: 4px solid #ffa500; } /* Условный оранжевый */
+        .promek-fokus-blue { background-color: #e6f0ff; border-left: 4px solid #007bff; } /* Условный голубой */
+        .promek-fokus-white { background-color: #f5f5f5; border-left: 4px solid #ccc; } /* Условный "без цвета" */
+        .promek-fokus-red { background-color: #ffe6e6; border-left: 4px solid #dc3545; } /* Условный "красный" */
 
-<table class="promek-table">
-  <tr>
-    <th>Этап воронки</th>
-    <th>Действие МСП</th>
-    <th>SLA (Срок)</th>
-  </tr>
-  <tr>
-    <td>Заявка в работе</td>
-    <td>Проверка наличия, резерв</td>
-    <td>30 мин</td>
-  </tr>
-  <tr>
-    <td>Выставлен счёт</td>
-    <td>Отправка клиенту, контроль</td>
-    <td>1 час</td>
-  </tr>
-   <tr>
-    <td>Есть предоплата</td>
-    <td>Передача в комплектацию</td>
-    <td>Сразу</td>
-  </tr>
-</table>
+        .promek-fokus-color-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .promek-fokus-algo-title { margin-top: 25px; }
+    </style>
+</head>
+<body>
+
+<div class="promek-fokus-section">
+
+    <h1>Фокусные бренды</h1>
+
+    <p>Фокусные бренды — это ключевой элемент стратегии продаж Протэк. Это те производители и решения, на которые мы делаем акцент при подборе оборудования для клиента.</div class="promek-fokus-definition">
+        <p><strong>Цель:</strong> Увеличить средний чек, улучшить маржинальность, поддержать долгосрочные отношения с производителями, которые помогают нам в реализации проектов.</p>
+        <p><strong>Принцип:</strong> При прочих равных условиях (цена, срок поставки, функционал) — мы рекомендуем фокусные бренды.</p>
+    </div>
+
+    <h2>Цветовая маркировка</h2>
+    <p>Каждый бренд в портфеле Протэк имеет цветовую метку. Цвет показывает стратегию работы с этим брендом.</p>
+
+    <div class="promek-fokus-colors-grid">
+        <div class="promek-fokus-color-card promek-fokus-orange">
+            <div class="promek-fokus-color-title">🟠 Оранжевый — Фокус / Развитие</div>
+            <p><strong>Стратегия:</strong> Активное продвижение, обучение команды, маркетинг-поддержка, приоритет на складе.</p>
+            <p><strong>Примеры:</strong> ZKTeco, DAHUA/DAHO, iFlow, Cardex.</p>
+        </div>
+
+        <div class="promek-fokus-color-card promek-fokus-blue">
+            <div class="promek-fokus-color-title">🔵 Голубой — Поддержка / Стабильность</div>
+            <p><strong>Стратегия:</strong> Держим в наличии, продаем по запросу, обеспечиваем стабильность поставок и сервиса.</p>
+            <p><strong>Примеры:</strong> Sigur, Rubezh, Ajax, E-Smart.</p>
+        </div>
+
+        <div class="promek-fokus-color-card promek-fokus-white">
+            <div class="promek-fokus-color-title">⚪ Без цвета — Пассив / Остаточный</div>
+            <p><strong>Стратегия:</strong> Не инвестируем ресурсы, не делаем активных предложений. Продаем, только если клиент сам запросил.</p>
+            <p><strong>Примеры:</strong> Blockpost, отдельные позиции других брендов.</p>
+        </div>
+
+        <div class="promek-fokus-color-card promek-fokus-red">
+            <div class="promek-fokus-color-title">🔴 Красный — Исключить</div>
+            <p><strong>Стратегия:</strong> Не предлагаем, не закупаем, выводим из портфеля. Обычно это низкомаржинальные или проблемные позиции.</p>
+            <p><strong>Примеры:</strong> Конкретные позиции с плохой поддержкой или без маржи.</p>
+        </div>
+    </div>
+
+    <h2 class="promek-fokus-algo-title">Алгоритм подбора оборудования</h2>
+    <p>При подборе решений для клиента менеджер руководствуется следующим порядком:</p>
+    <ol>
+        <li><strong>Проверить «висяки»:</strong> Помочь коллеге или разгрузить склад. (См. реестр «висяков»)</li>
+        <li><strong>Проверить спецпредложения:</strong> Если решение релевантно задаче клиента.</li>
+        <li><strong>Предложить фокусные бренды (<span style="color:#ffa500;">🟠</span> или <span style="color:#007bff;">🔵</span>):</strong> Особенно если они соответствуют задаче клиента и его RFM-сегменту (см. раздел "RFM-анализ").</li>
+        <li><strong>Предложить решение, а не просто товар:</strong> Всегда фокусируемся на том, как решить задачу клиента.</li>
+    </ol>
+
+    <h3>Важно!</h3>
+    <ul>
+        <li>Сегмент фокусных брендов пересматривается не чаще <strong>1 раза в квартал</strong>.</li>
+        <li>Маржинальность важнее оборота. Не создаем искусственного спроса на низкомаржинальные позиции.</li>
+        <li>Новые фокусные бренды или решения тестируем сначала на лояльных клиентах.</li>
+    </ul>
+
+</div>
+
+</body>
+</html>
