@@ -1,0 +1,60 @@
+site_name: Книга продаж ПРОТЭК
+site_description: Внутренняя база знаний отдела продаж ООО «ПРОТЭК»
+site_url: https://mafusailn.github.io/Protech/
+repo_url: https://github.com/MafusailN/Protech
+repo_name: MafusailN/Protech
+
+theme:
+  name: material
+  language: ru
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+
+nav:
+  - Главная: index.md
+  - О компании:
+      - Ценности и философия: company/about.md
+      - Айдентика и брендбук: company/identity.md
+      - Термины и классификация клиентов: company/glossary.md
+  - Портфель брендов:
+      - Обзор и цветовая маркировка: brands/index.md
+      - СКУД (турникеты, шлагбаумы, считыватели, контроллеры): brands/skud.md
+      - ОПС (охранно-пожарная сигнализация): brands/ops.md
+      - Видеонаблюдение: brands/video.md
+      - ИБП и БПП (питание): brands/power.md
+      - Сетевое оборудование: brands/network.md
+      - КНС, кабель, шкафы: brands/cable-cns.md
+  - Ценообразование: pricing.md
+  - Процессы и регламенты:
+      - Алгоритм рабочего дня МАП/МСП: process/workday.md
+      - Регламент работы с ДЗ/ПДЗ: process/pdz.md
+      - Отсрочка платежа и кредитный лимит: process/credit-limit.md
+      - ABC-сегментация клиентов: process/abc-segmentation.md
+      - Отчёт «Сравнение периодов»: process/period-comparison.md
