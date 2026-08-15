@@ -1,0 +1,21 @@
+:root {
+  --protech-blue: #005AAB;
+  --protech-black: #000000;
+  --protech-white: #ffffff;
+  --protech-grey-blue: #cfd6e5;
+}
+
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color: var(--protech-blue);
+  --md-primary-fg-color--light: var(--protech-blue);
+  --md-primary-fg-color--dark: var(--protech-blue);
+}
+
+[data-md-color-accent="custom"] {
+  --md-accent-fg-color: var(--protech-blue);
+}
+
+/* Цветовые метки брендов: 🟠 фокус · 🔵 в наличии · ⚪ фоновый */
+.brand-focus { color: #d97706; font-weight: 600; }
+.brand-stock { color: #005AAB; font-weight: 600; }
+.brand-passive { color: #6b7280; font-weight: 600; }
